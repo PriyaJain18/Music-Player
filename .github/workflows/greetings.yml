@@ -3,7 +3,7 @@ name: Greetings
 on: [pull_request, issues]
 
 jobs:
-  greeting:
+  greeting:  #job-name 
     runs-on: ${{ matrix.os }}
 #     For running code on different os,versions of an apps or code libraries , matrix is used .
     strategy:
@@ -18,3 +18,7 @@ jobs:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         issue-message: 'Message that will be displayed on users first issue'
         pr-message: 'Thanks for making the pull request.'
+# job_name: 
+#   needs: greeting           #this job will only work after finishing 'greeting' job;otherwise would have run parallely
+
+# note : different jobs runs on different github-servers 
