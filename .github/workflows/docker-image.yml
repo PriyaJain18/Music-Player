@@ -8,10 +8,10 @@ on:
 jobs:
   docker:      #link: "https://github.com/mr-smithers-excellent/docker-build-push "
     name: BUILD AND PUSH DOCKER IMAGE 
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:  
-        os: [ubuntu-latest,windows-latest,macOS-latest]
+    runs-on: ubuntu-latest
+#     strategy:
+#       matrix:  
+#         os: [ubuntu-latest,windows-latest,macOS-latest]
     steps:
     - uses: actions/checkout@v2
       name: Check out code
